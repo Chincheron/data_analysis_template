@@ -1,6 +1,6 @@
-from chincheron_util import file_util
+from pyprojroot.here import here
 
-ROOT = file_util.find_repository_root()
+ROOT = here("pyproject.toml").parent
 
 DATA = ROOT / "data"
 DATA_RAW = DATA / "raw"

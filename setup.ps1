@@ -34,11 +34,14 @@ if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
 }
 
 # Initialize uv environment if not already done
-if (-not (Test-Path "pyproject.toml")) {
+if (Test-Path "pyproject.toml") {
+    Write-Host "pyproject.toml found. Skipping uv init..." -ForegroundColor Cyan
+} else {
     $projectName = Split-Path -Leaf (Get-Location)
     Write-Host "No pyproject.toml found. Initializing project: $projectName" -ForegroundColor Yellow
     uv init --name $projectName
 }
+
 
 Write-Host "Syncing Python environment..." -ForegroundColor Cyan
 uv sync
