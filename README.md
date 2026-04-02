@@ -47,7 +47,7 @@ After setup completes:
 
 * All Python dependencies are installed and synced
 * The R environment is restored
-* The project is ready to run
+* The project is ready to run (see 'scripts/run_analysis_example.r' for example of orchestration script)
 
 # Folder Description
 
