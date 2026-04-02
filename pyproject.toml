@@ -5,3 +5,7 @@ requires-python = ">=3.11"
 dependencies = [
     "pyprojroot",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["config*", "src*"]

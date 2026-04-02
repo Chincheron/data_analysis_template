@@ -1,6 +1,6 @@
 # Configuration
 
-This directory contains centralized configuration used across the project (e.g., defining file paths, global variables, figure consistency.
+This directory contains centralized configuration used across the project (e.g., defining file paths, global variables, figure consistency. Config/ folder is importable as a package. 
 
 ## Purpose
 
@@ -32,7 +32,9 @@ from config.paths import DATA_PIPELINE
 ### R
 
 ```r
-source("config/paths.R")
+library(reticulate)
+
+paths = import("config.paths", convert = TRUE) 
 ```
 
 ## Principles

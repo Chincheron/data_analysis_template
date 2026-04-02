@@ -54,6 +54,17 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host "Python environment synced." -ForegroundColor Green
 
+Write-Host "Installing project in editable mode..." -ForegroundColor Cyan
+uv pip install -e .
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "ERROR: Editable install failed." -ForegroundColor Red
+    pause
+    exit 1
+}
+
+Write-Host "Project installed." -ForegroundColor Green
+
 # ── R ──────────────────────────────────────────────────────────────────────────
 
 if (-not (Get-Command Rscript -ErrorAction SilentlyContinue)) {

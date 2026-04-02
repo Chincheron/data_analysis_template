@@ -1,6 +1,6 @@
 # Source Code
 
-This directory contains reusable, structured code that supports the project.
+This directory contains reusable, structured code that supports the project. src/ folder is importable as a package.
 
 ## Purpose
 
